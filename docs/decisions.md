@@ -57,3 +57,13 @@ deliberately neutral structural placeholders that preserve dimensions and
 behavior without imitating the documented aesthetics. Approved real or custom
 human-created imagery may replace placeholders later. CSS interface styling is
 allowed when it is clearly UI rather than synthetic aesthetic evidence.
+
+## D-008: Reversible tactile-Aero polish
+
+Status: Accepted direction; final treatment pending review.
+
+Preserve the Level 2 composition and current architecture while interaction is
+developed. The prototype serif heading is not final typography. Future visual
+polish should favor tactile Aero and skeuomorphic depth over generic glass/SaaS
+or editorial-minimal styling, with theme tokens and isolated CSS keeping major
+restyling reversible.

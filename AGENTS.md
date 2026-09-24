@@ -55,3 +55,8 @@ fabricate historical claims or sources to fill empty sections.
 Keep the app runnable after each major milestone. Preserve keyboard access,
 visible focus, touch targets, responsive layouts, and reduced-motion behavior.
 Level 3 grids use equal-size tiles. Avoid generic SaaS styling and dead links.
+
+The current serif explorer heading is prototype typography, not a final design
+choice. Later polish should move toward tactile Aero and skeuomorphic depth,
+not editorial minimalism or generic modern glass/SaaS styling. Keep major visual
+changes token-based and reversible while the owner evaluates direction.
