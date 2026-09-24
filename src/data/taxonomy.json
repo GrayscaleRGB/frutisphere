@@ -14,8 +14,8 @@
     "colors": ["#b9ed38", "#ff4ea0", "#21b8d8"],
     "motifs": ["vector flourishes", "bold silhouettes", "music graphics"],
     "tileImage": {
-      "src": "/assets/placeholders/vectordelia-tile.png",
-      "alt": "Abstract green and magenta Vectordelia placeholder artwork",
+      "src": "/assets/placeholders/vectordelia-tile.svg",
+      "alt": "Neutral tile image placeholder for Vectordelia",
       "placeholder": true
     },
     "sources": [],
@@ -37,8 +37,8 @@
     "colors": ["#159fe4", "#67d02a", "#ffffff"],
     "motifs": ["blue skies", "clean water", "green landscapes", "glossy technology"],
     "tileImage": {
-      "src": "/assets/placeholders/frutiger-aero-tile.png",
-      "alt": "Bright blue and green Frutiger Aero placeholder artwork",
+      "src": "/assets/placeholders/frutiger-aero-tile.svg",
+      "alt": "Neutral tile image placeholder for Frutiger Aero",
       "placeholder": true
     },
     "sources": [],
@@ -60,8 +60,8 @@
     "colors": ["#ff82af", "#94efff", "#f7dd48"],
     "motifs": ["curated connections", "bright technology", "clean spaces"],
     "tileImage": {
-      "src": "/assets/placeholders/more-tile.png",
-      "alt": "Colorful translucent More section placeholder artwork",
+      "src": "/assets/placeholders/more-tile.svg",
+      "alt": "Neutral tile image placeholder for More",
       "placeholder": true
     },
     "sources": [],
@@ -84,7 +84,7 @@
     "summary": "An ecological branch of Frutiger Aero centered on clean energy and optimistic green technology.",
     "colors": ["#62c936", "#9ce6ff", "#ffffff"],
     "motifs": ["renewable energy", "green cities", "clean technology"],
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Eco placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Eco", "placeholder": true},
     "sources": [],
     "specialTheme": "eco-bloom",
     "tags": ["eco", "green", "energy"],
@@ -104,7 +104,7 @@
     "status": "Established",
     "origin": "Historical",
     "summary": "A subcategory of Frutiger Eco focused on idealized sustainable corporate environments.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Renewable Corporate Utopia placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Renewable Corporate Utopia", "placeholder": true},
     "sources": [],
     "tags": ["eco", "corporate", "utopia"],
     "lastReviewed": "2026-09-24"
@@ -123,7 +123,7 @@
     "status": "Established",
     "origin": "Historical",
     "summary": "A clean, typographic, aqua-toned branch of the Aero visual language.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Helvetica Aqua Aero placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Helvetica Aqua Aero", "placeholder": true},
     "sources": [],
     "tags": ["aqua", "typography", "clean"],
     "lastReviewed": "2026-09-24"
@@ -142,7 +142,7 @@
     "status": "Established",
     "origin": "Historical",
     "summary": "An aurora-lit expression of glossy natural and digital atmosphere.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Aurora placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Aurora", "placeholder": true},
     "sources": [],
     "tags": ["aurora", "light", "atmosphere"],
     "lastReviewed": "2026-09-24"
@@ -161,7 +161,7 @@
     "status": "Established",
     "origin": "Historical",
     "summary": "A darker, nocturnal interpretation of glossy Aero surfaces and luminous technology.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Dark Aero placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Dark Aero", "placeholder": true},
     "sources": [],
     "tags": ["dark", "gloss", "night"],
     "lastReviewed": "2026-09-24"
@@ -180,7 +180,7 @@
     "status": "Established",
     "origin": "Historical",
     "summary": "Calm, precise technology presented through serene space and refined surfaces.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Technozen placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Technozen", "placeholder": true},
     "sources": [],
     "tags": ["technology", "zen", "minimal"],
     "lastReviewed": "2026-09-24"
@@ -199,7 +199,7 @@
     "status": "Established",
     "origin": "Historical",
     "summary": "A historical branch within the broader Frutiger visual ecosystem.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "DORFic placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for DORFic", "placeholder": true},
     "sources": [],
     "tags": ["historical", "aero"],
     "lastReviewed": "2026-09-24"
@@ -218,7 +218,7 @@
     "status": "Established",
     "origin": "Historical",
     "summary": "Seasonal color and playful natural motifs within the Frutiger ecosystem.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Funky Seasons placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Funky Seasons", "placeholder": true},
     "sources": [],
     "tags": ["seasonal", "colorful", "nature"],
     "lastReviewed": "2026-09-24"
@@ -237,7 +237,7 @@
     "status": "Developing",
     "origin": "Community",
     "summary": "A calm community classification emphasizing tranquil Frutiger spaces.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Zen placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Zen", "placeholder": true},
     "sources": [],
     "tags": ["calm", "serenity", "community"],
     "lastReviewed": "2026-09-24"
@@ -256,7 +256,7 @@
     "status": "Developing",
     "origin": "Community",
     "summary": "An icy community branch combining frozen landscapes with luminous technology.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Cyber Glacier placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Cyber Glacier", "placeholder": true},
     "sources": [],
     "specialTheme": "cyber-glacier",
     "tags": ["winter", "ice", "technology"],
@@ -276,7 +276,7 @@
     "status": "Developing",
     "origin": "Community",
     "summary": "A fruit-focused community branch with bright color and glossy freshness.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Fruits placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Fruits", "placeholder": true},
     "sources": [],
     "tags": ["fruit", "fresh", "colorful"],
     "lastReviewed": "2026-09-24"
@@ -295,7 +295,7 @@
     "status": "Developing",
     "origin": "Community",
     "summary": "A festive community branch of bright seasonal Frutiger imagery.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Jolly placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Jolly", "placeholder": true},
     "sources": [],
     "tags": ["festive", "winter", "community"],
     "lastReviewed": "2026-09-24"
@@ -314,7 +314,7 @@
     "status": "Developing",
     "origin": "Fan-made",
     "summary": "A fan-made inversion of Frutiger Aero's optimistic visual language.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Evil placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Evil", "placeholder": true},
     "sources": [],
     "tags": ["dark", "fan-made", "inversion"],
     "lastReviewed": "2026-09-24"
@@ -333,7 +333,7 @@
     "status": "Emerging",
     "origin": "Community",
     "summary": "An emerging rain-focused community classification.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Rain placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Rain", "placeholder": true},
     "sources": [],
     "tags": ["rain", "weather", "community"],
     "lastReviewed": "2026-09-24"
@@ -352,7 +352,7 @@
     "status": "Emerging",
     "origin": "Community",
     "summary": "An emerging desert-focused community classification.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Desert placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Desert", "placeholder": true},
     "sources": [],
     "tags": ["desert", "warm", "community"],
     "lastReviewed": "2026-09-24"
@@ -371,7 +371,7 @@
     "status": "Emerging",
     "origin": "Community",
     "summary": "An emerging autumnal community classification.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Autumn placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Autumn", "placeholder": true},
     "sources": [],
     "tags": ["autumn", "seasonal", "community"],
     "lastReviewed": "2026-09-24"
@@ -390,7 +390,7 @@
     "status": "Emerging",
     "origin": "Community",
     "summary": "An emerging community classification centered on warm afternoon atmosphere.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Afternoon placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Afternoon", "placeholder": true},
     "sources": [],
     "tags": ["afternoon", "light", "community"],
     "lastReviewed": "2026-09-24"
@@ -409,7 +409,7 @@
     "status": "Emerging",
     "origin": "Community",
     "summary": "An emerging cosmic community classification.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Galaxy placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Galaxy", "placeholder": true},
     "sources": [],
     "tags": ["space", "galaxy", "community"],
     "lastReviewed": "2026-09-24"
@@ -428,7 +428,7 @@
     "status": "Emerging",
     "origin": "Community",
     "summary": "An emerging Halloween-themed community classification.",
-    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.png", "alt": "Frutiger Halloween placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/frutiger-aero-tile.svg", "alt": "Neutral tile image placeholder for Frutiger Halloween", "placeholder": true},
     "sources": [],
     "tags": ["halloween", "seasonal", "community"],
     "lastReviewed": "2026-09-24"
@@ -445,7 +445,7 @@
     "childIds": ["vectorbloom", "vectorgarden"],
     "relatedIds": [],
     "summary": "A flourish-led category within Vectordelia's expressive vector language.",
-    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.png", "alt": "Vectorflourish placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.svg", "alt": "Neutral tile image placeholder for Vectorflourish", "placeholder": true},
     "sources": [],
     "tags": ["vector", "flourish"],
     "lastReviewed": "2026-09-24"
@@ -462,7 +462,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A botanical subcategory of Vectorflourish.",
-    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.png", "alt": "Vectorbloom placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.svg", "alt": "Neutral tile image placeholder for Vectorbloom", "placeholder": true},
     "sources": [],
     "tags": ["vector", "botanical"],
     "lastReviewed": "2026-09-24"
@@ -479,7 +479,7 @@
     "childIds": [],
     "relatedIds": ["frutiger-aero"],
     "summary": "A garden-focused Vectorflourish subcategory with a crossover relationship to Frutiger Aero.",
-    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.png", "alt": "Vectorgarden placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.svg", "alt": "Neutral tile image placeholder for Vectorgarden", "placeholder": true},
     "sources": [],
     "tags": ["vector", "garden", "aero crossover"],
     "lastReviewed": "2026-09-24"
@@ -496,7 +496,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A playful metropolitan category within Vectordelia.",
-    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.png", "alt": "Funky Metro placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.svg", "alt": "Neutral tile image placeholder for Funky Metro", "placeholder": true},
     "sources": [],
     "tags": ["funky", "metro"],
     "lastReviewed": "2026-09-24"
@@ -513,7 +513,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A club- and rave-inflected metropolitan category within Vectordelia.",
-    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.png", "alt": "Rave Metro placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.svg", "alt": "Neutral tile image placeholder for Rave Metro", "placeholder": true},
     "sources": [],
     "tags": ["rave", "metro", "music"],
     "lastReviewed": "2026-09-24"
@@ -530,7 +530,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A distressed metropolitan category within Vectordelia.",
-    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.png", "alt": "Grungy Metro placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.svg", "alt": "Neutral tile image placeholder for Grungy Metro", "placeholder": true},
     "sources": [],
     "tags": ["grunge", "metro"],
     "lastReviewed": "2026-09-24"
@@ -547,7 +547,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A music-oriented metropolitan category within Vectordelia.",
-    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.png", "alt": "Musica Metro placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/vectordelia-tile.svg", "alt": "Neutral tile image placeholder for Musica Metro", "placeholder": true},
     "sources": [],
     "tags": ["music", "metro"],
     "lastReviewed": "2026-09-24"
@@ -564,7 +564,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A curated neighboring aesthetic in the More section.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Gen X Soft Club placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Gen X Soft Club", "placeholder": true},
     "sources": [],
     "tags": ["soft", "club"],
     "lastReviewed": "2026-09-24"
@@ -581,7 +581,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A curated neighboring aesthetic in the More section.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Utopian Scholastic placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Utopian Scholastic", "placeholder": true},
     "sources": [],
     "tags": ["utopian", "scholastic"],
     "lastReviewed": "2026-09-24"
@@ -598,7 +598,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A selected, relevant neighboring aesthetic without importing the broader Y2K taxonomy.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Y2K Futurism placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Y2K Futurism", "placeholder": true},
     "sources": [],
     "tags": ["y2k", "futurism"],
     "lastReviewed": "2026-09-24"
@@ -615,7 +615,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A curated neighboring aesthetic in the More section.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Bright Tertiaries placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Bright Tertiaries", "placeholder": true},
     "sources": [],
     "tags": ["color", "bright"],
     "lastReviewed": "2026-09-24"
@@ -632,7 +632,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A curated neighboring aesthetic in the More section.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Superflat Pop placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Superflat Pop", "placeholder": true},
     "sources": [],
     "tags": ["superflat", "pop"],
     "lastReviewed": "2026-09-24"
@@ -649,7 +649,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A curated neighboring aesthetic in the More section.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Abstract Tech placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Abstract Tech", "placeholder": true},
     "sources": [],
     "tags": ["abstract", "technology"],
     "lastReviewed": "2026-09-24"
@@ -666,7 +666,7 @@
     "childIds": ["high-cleancore", "low-cleancore"],
     "relatedIds": [],
     "summary": "A clean-space aesthetic with High and Low Cleancore subcategories.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Cleancore placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Cleancore", "placeholder": true},
     "sources": [],
     "tags": ["clean", "hygiene", "space"],
     "lastReviewed": "2026-09-24"
@@ -683,7 +683,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A subcategory of Cleancore.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "High Cleancore placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for High Cleancore", "placeholder": true},
     "sources": [],
     "tags": ["clean", "high cleancore"],
     "lastReviewed": "2026-09-24"
@@ -700,7 +700,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A subcategory of Cleancore.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Low Cleancore placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Low Cleancore", "placeholder": true},
     "sources": [],
     "tags": ["clean", "low cleancore"],
     "lastReviewed": "2026-09-24"
@@ -717,7 +717,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A curated neighboring aesthetic in the More section.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Gamecore placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Gamecore", "placeholder": true},
     "sources": [],
     "tags": ["games", "digital"],
     "lastReviewed": "2026-09-24"
@@ -734,7 +734,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A curated neighboring aesthetic in the More section.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Flat Design placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Flat Design", "placeholder": true},
     "sources": [],
     "tags": ["flat", "design"],
     "lastReviewed": "2026-09-24"
@@ -751,7 +751,7 @@
     "childIds": [],
     "relatedIds": [],
     "summary": "A curated neighboring aesthetic in the More section.",
-    "tileImage": {"src": "/assets/placeholders/more-tile.png", "alt": "Hexatron placeholder artwork", "placeholder": true},
+    "tileImage": {"src": "/assets/placeholders/more-tile.svg", "alt": "Neutral tile image placeholder for Hexatron", "placeholder": true},
     "sources": [],
     "tags": ["hexagon", "technology"],
     "lastReviewed": "2026-09-24"
