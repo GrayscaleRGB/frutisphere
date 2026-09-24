@@ -7,12 +7,17 @@ are research inputs, not automatic production assets. Do not scrape or import
 them into the repository. A supplied image is a design reference unless the
 owner explicitly approves it for production use.
 
+AI-generated imagery is prohibited throughout Frutisphere. This includes Level
+2 and Level 3 tiles, heroes, galleries, historical examples, decorative
+examples, and temporary stand-ins. Synthetic representative imagery conflicts
+with the project's archival and reference purpose.
+
 ## Allowed in v0.1
 
-- Original assets created for Frutisphere
+- Original human-created assets made for Frutisphere
 - Owner-created assets explicitly approved for production use
 - Properly licensed assets with recorded provenance and terms
-- Clearly identified placeholder image assets
+- Deliberately neutral structural placeholder image assets
 - CSS-created site atmosphere and interface effects
 
 ## Tile assets
@@ -22,7 +27,14 @@ its own frame, border, and internal composition. The UI must not place a second
 decorative frame around a cropped source image. Titles remain HTML text below.
 
 Placeholders should preserve the target aspect ratio and layout behavior. They
-must be replaceable by changing the data reference only.
+must be visually neutral: a muted rectangle or gradient, subtle empty-state
+pattern, generic image icon, or plain placeholder label. They must not imitate
+the documented aesthetic or be mistaken for an authentic example. They must be
+replaceable by changing the data reference only.
+
+CSS may provide the Alba Aero-inspired environment, glass panels, highlights,
+shadows, controls, and motion. That styling is interface design and must remain
+clearly distinct from aesthetic evidence or archive imagery.
 
 ## Future metadata
 

@@ -47,3 +47,13 @@ Status: Accepted for v0.1.
 Persist theme, accent, and the last three unique special themes in localStorage.
 Quick Access themes never populate Recent. Visiting a category never changes
 appearance automatically.
+
+## D-007: No AI-generated imagery
+
+Status: Locked product decision.
+
+Do not create, import, or display AI-generated imagery in Frutisphere. v0.1 uses
+deliberately neutral structural placeholders that preserve dimensions and
+behavior without imitating the documented aesthetics. Approved real or custom
+human-created imagery may replace placeholders later. CSS interface styling is
+allowed when it is clearly UI rather than synthetic aesthetic evidence.

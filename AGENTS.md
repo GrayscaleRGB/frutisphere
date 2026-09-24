@@ -42,8 +42,13 @@ not add Vaporwave, Dreamcore, Weirdcore, or Flat Metro. Use `Subcategory`, not
 
 Treat supplied references as design references unless the owner explicitly
 approves production use. Do not scrape or import copyrighted aesthetic imagery.
-Use original generated assets, owner-approved assets, or clear placeholders.
-Do not fabricate historical claims or sources to fill empty sections.
+Do not use AI-generated imagery anywhere in Frutisphere, including temporary
+tile artwork, heroes, galleries, historical examples, or decorative aesthetic
+examples. Placeholders must be deliberately neutral structural UI: muted blocks,
+subtle empty states, generic image icons, or plain labels. Approved real or
+custom human-created imagery may replace them later. CSS may style the interface
+but must not imitate evidence or representative archival imagery. Do not
+fabricate historical claims or sources to fill empty sections.
 
 ## Quality bar
 

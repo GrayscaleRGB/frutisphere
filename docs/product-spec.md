@@ -24,7 +24,9 @@ The explorer is the homepage. It opens with Frutiger Aero emphasized.
 Level 2 and Level 3 render a complete image asset plus a separate HTML title.
 The image may later contain its own decorative frame and internal composition.
 The site must not build an additional frame around a cropped photograph. v0.1
-uses complete placeholder image files and swaps them only through data.
+uses neutral structural placeholder image files and swaps them only through
+data. Placeholders must not imitate or represent an aesthetic. AI-generated
+imagery is prohibited across the project.
 
 ## Interaction
 
