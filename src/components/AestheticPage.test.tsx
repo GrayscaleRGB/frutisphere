@@ -1,9 +1,12 @@
 // @vitest-environment jsdom
 
-import { render, screen } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { describe, expect, it } from 'vitest';
-import { AppearanceProvider } from '../appearance/AppearanceContext';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import {
+  APPEARANCE_STORAGE_KEY,
+  AppearanceProvider,
+} from '../appearance/AppearanceContext';
 import { AestheticPage } from './AestheticPage';
 
 function renderAesthetic(path: string) {
@@ -19,6 +22,15 @@ function renderAesthetic(path: string) {
 }
 
 describe('AestheticPage', () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+    delete document.documentElement.dataset.theme;
+    delete document.documentElement.dataset.accent;
+    delete document.documentElement.dataset.specialTheme;
+  });
+
+  afterEach(cleanup);
+
   it('renders nested subcategories as navigable tiles', () => {
     renderAesthetic('/aesthetic/frutiger-eco');
 
@@ -46,5 +58,42 @@ describe('AestheticPage', () => {
     expect(screen.getByRole('link', { name: 'Back to Frutiger Eco' }).getAttribute('href')).toBe(
       '/aesthetic/frutiger-eco',
     );
+  });
+
+  it('offers both planned special themes only on their assigned pages', () => {
+    const eco = renderAesthetic('/aesthetic/frutiger-eco');
+    expect(screen.getByRole('button', { name: 'Use Eco Bloom theme' })).toBeTruthy();
+    expect(document.documentElement.dataset.specialTheme).toBeUndefined();
+
+    eco.unmount();
+    const glacier = renderAesthetic('/aesthetic/cyber-glacier');
+    expect(screen.getByRole('button', { name: 'Use Cyber Glacier theme' })).toBeTruthy();
+    expect(document.documentElement.dataset.specialTheme).toBeUndefined();
+
+    glacier.unmount();
+    renderAesthetic('/aesthetic/y2k-futurism');
+    expect(screen.queryByRole('button', { name: /theme$/i })).toBeNull();
+  });
+
+  it('activates special themes explicitly, newest first, and preserves them across navigation', () => {
+    const eco = renderAesthetic('/aesthetic/frutiger-eco');
+    fireEvent.click(screen.getByRole('button', { name: 'Use Eco Bloom theme' }));
+
+    expect(document.documentElement.dataset.specialTheme).toBe('eco-bloom');
+    fireEvent.click(screen.getByRole('button', { name: 'Appearance' }));
+    expect(screen.getByRole('heading', { name: 'Recent' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Eco Bloom' })).toBeTruthy();
+
+    eco.unmount();
+    renderAesthetic('/aesthetic/cyber-glacier');
+    expect(document.documentElement.dataset.specialTheme).toBe('eco-bloom');
+    expect(screen.getByRole('button', { name: 'Use Cyber Glacier theme' }).getAttribute('aria-pressed')).toBe('false');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Use Cyber Glacier theme' }));
+    expect(document.documentElement.dataset.specialTheme).toBe('cyber-glacier');
+    expect(JSON.parse(window.localStorage.getItem(APPEARANCE_STORAGE_KEY)!)).toMatchObject({
+      activeSpecialTheme: 'cyber-glacier',
+      recentSpecialThemes: ['cyber-glacier', 'eco-bloom'],
+    });
   });
 });

@@ -3,6 +3,11 @@ import { addRecentSpecialTheme, DEFAULT_APPEARANCE, parseAppearance } from './ap
 
 describe('appearance state', () => {
   it('keeps the three latest unique special themes', () => {
+    expect(addRecentSpecialTheme(['second', 'first', 'third'], 'fourth')).toEqual([
+      'fourth',
+      'second',
+      'first',
+    ]);
     expect(addRecentSpecialTheme(['cyber-glacier', 'eco-bloom'], 'eco-bloom')).toEqual([
       'eco-bloom',
       'cyber-glacier',
@@ -29,5 +34,14 @@ describe('appearance state', () => {
       activeSpecialTheme: 'eco-bloom',
       recentSpecialThemes: ['eco-bloom', 'cyber-glacier'],
     });
+  });
+
+  it('repairs persisted state so the active special theme is newest in Recent', () => {
+    expect(parseAppearance(JSON.stringify({
+      theme: 'alba-aero',
+      accent: 'default',
+      activeSpecialTheme: 'cyber-glacier',
+      recentSpecialThemes: ['eco-bloom'],
+    })).recentSpecialThemes).toEqual(['cyber-glacier', 'eco-bloom']);
   });
 });

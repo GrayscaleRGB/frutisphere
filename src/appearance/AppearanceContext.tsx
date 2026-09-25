@@ -16,7 +16,7 @@ import {
   type ThemeId,
 } from './appearance';
 
-const STORAGE_KEY = 'frutisphere.appearance.v1';
+export const APPEARANCE_STORAGE_KEY = 'frutisphere.appearance.v1';
 
 interface AppearanceContextValue extends AppearanceState {
   setTheme: (theme: ThemeId) => void;
@@ -28,7 +28,7 @@ const AppearanceContext = createContext<AppearanceContextValue | undefined>(unde
 
 function readStoredAppearance() {
   if (typeof window === 'undefined') return DEFAULT_APPEARANCE;
-  return parseAppearance(window.localStorage.getItem(STORAGE_KEY));
+  return parseAppearance(window.localStorage.getItem(APPEARANCE_STORAGE_KEY));
 }
 
 export function AppearanceProvider({ children }: { children: ReactNode }) {
@@ -40,7 +40,7 @@ export function AppearanceProvider({ children }: { children: ReactNode }) {
     root.dataset.accent = appearance.accent;
     if (appearance.activeSpecialTheme) root.dataset.specialTheme = appearance.activeSpecialTheme;
     else delete root.dataset.specialTheme;
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(appearance));
+    window.localStorage.setItem(APPEARANCE_STORAGE_KEY, JSON.stringify(appearance));
   }, [appearance]);
 
   const value = useMemo<AppearanceContextValue>(() => ({

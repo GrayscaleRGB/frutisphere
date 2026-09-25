@@ -43,10 +43,10 @@ const themeIds = new Set<string>(THEME_OPTIONS.map((theme) => theme.id));
 const accentIds = new Set<string>(ACCENT_OPTIONS.map((accent) => accent.id));
 const specialThemeIds = new Set<string>(SPECIAL_THEME_OPTIONS.map((theme) => theme.id));
 
-export function addRecentSpecialTheme(
-  recent: SpecialThemeId[],
-  selected: SpecialThemeId,
-): SpecialThemeId[] {
+export function addRecentSpecialTheme<T extends string>(
+  recent: T[],
+  selected: T,
+): T[] {
   return [selected, ...recent.filter((id) => id !== selected)].slice(0, 3);
 }
 
@@ -72,7 +72,14 @@ export function parseAppearance(value: string | null): AppearanceState {
       ? candidate.activeSpecialTheme as SpecialThemeId
       : undefined;
 
-    return { theme, accent, activeSpecialTheme, recentSpecialThemes };
+    return {
+      theme,
+      accent,
+      activeSpecialTheme,
+      recentSpecialThemes: activeSpecialTheme
+        ? addRecentSpecialTheme(recentSpecialThemes, activeSpecialTheme)
+        : recentSpecialThemes,
+    };
   } catch {
     return DEFAULT_APPEARANCE;
   }
