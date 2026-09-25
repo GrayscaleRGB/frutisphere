@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { TaxonomyRecord } from '../data/taxonomy';
+import { getAssetUrl } from '../lib/assets';
 
 interface AestheticTileProps {
   record: TaxonomyRecord;
@@ -14,7 +15,7 @@ export function AestheticTile({ record }: AestheticTileProps) {
     >
       <img
         className="grid-tile-image"
-        src={record.tileImage.src}
+        src={getAssetUrl(record.tileImage.src)}
         alt={record.tileImage.alt}
         draggable="false"
       />

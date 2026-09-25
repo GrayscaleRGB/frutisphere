@@ -8,6 +8,7 @@ import {
 } from 'react';
 import { Link } from 'react-router-dom';
 import { getLevelTwoRecords, type TaxonomyRecord } from '../data/taxonomy';
+import { getAssetUrl } from '../lib/assets';
 import { getNearestIndex, getProximityWeights } from '../lib/proximity';
 
 const preferredOrder = ['vectordelia', 'frutiger-aero', 'more'];
@@ -33,7 +34,7 @@ function LevelTwoTile({ record, selected, onFocus, setTileRef }: LevelTwoTilePro
     >
       <img
         className="tile-image"
-        src={record.tileImage.src}
+        src={getAssetUrl(record.tileImage.src)}
         alt={record.tileImage.alt}
         draggable="false"
       />

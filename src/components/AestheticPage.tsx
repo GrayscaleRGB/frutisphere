@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { useAppearance } from '../appearance/AppearanceContext';
 import { getSpecialTheme } from '../appearance/appearance';
 import { getRecords, taxonomyById, taxonomyBySlug } from '../data/taxonomy';
+import { getAssetUrl } from '../lib/assets';
 import { AestheticTile } from './AestheticTile';
 import { Header } from './Header';
 
@@ -70,7 +71,7 @@ export function AestheticPage() {
         <header className="identity-header">
           <img
             className="identity-placeholder"
-            src={(record.heroImage ?? record.tileImage).src}
+            src={getAssetUrl((record.heroImage ?? record.tileImage).src)}
             alt={(record.heroImage ?? record.tileImage).alt}
             draggable="false"
           />
@@ -171,7 +172,7 @@ export function AestheticPage() {
               <h2 id="historical-examples-heading">Historical Examples</h2>
               <div className="gallery-grid">
                 {record.historicalExamples.map((image) => (
-                  <img key={image.src} src={image.src} alt={image.alt} />
+                  <img key={image.src} src={getAssetUrl(image.src)} alt={image.alt} />
                 ))}
               </div>
             </section>
@@ -210,7 +211,7 @@ export function AestheticPage() {
               <h2 id="gallery-heading">Gallery</h2>
               <div className="gallery-grid">
                 {record.galleryImages.map((image) => (
-                  <img key={image.src} src={image.src} alt={image.alt} />
+                  <img key={image.src} src={getAssetUrl(image.src)} alt={image.alt} />
                 ))}
               </div>
             </section>
