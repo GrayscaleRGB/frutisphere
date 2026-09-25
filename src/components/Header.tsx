@@ -11,12 +11,12 @@ export function Header() {
 
   return (
     <header className="site-header">
-      <NavLink className="brand" to="/" aria-label="Frutisphere home">
+      <Link className="brand" to="/" aria-label="Frutisphere home">
         <span className="brand-mark" aria-hidden="true">
           <ImageIcon size={18} strokeWidth={2.2} />
         </span>
         <span className="brand-name">Frutisphere</span>
-      </NavLink>
+      </Link>
       <nav className="header-tabs" aria-label="Primary navigation">
         <NavLink className={({ isActive }) => `nav-link${isActive ? ' is-current' : ''}`} to="/" end>
           <Home size={16} aria-hidden="true" />
