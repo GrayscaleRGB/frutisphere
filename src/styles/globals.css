@@ -1861,6 +1861,8 @@ html[data-theme="dark-aero"] .tile-title {
 
 @media (max-width: 650px) {
   .brand {
+    flex: 0 0 64px;
+    min-width: 64px;
     padding-inline: 12px;
   }
 
@@ -1868,35 +1870,49 @@ html[data-theme="dark-aero"] .tile-title {
     display: none;
   }
 
+  .header-tabs {
+    min-width: 0;
+    margin-left: 0;
+    flex: 1 1 auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .header-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
   .nav-link,
   .search-trigger,
   .appearance-trigger {
-    padding-inline: 12px;
+    min-height: 64px;
+    padding-inline: 16px;
+    flex: 0 0 auto;
+    justify-content: center;
+    gap: 7px;
+    font-size: 14px;
+    scroll-snap-align: start;
   }
 
-  .home-hero {
-    grid-template-columns: 1fr;
+  .nav-link {
+    min-width: 98px;
   }
 
-  .home-logo-placeholder {
-    width: min(100%, 260px);
-    min-height: 126px;
-    margin-inline: auto;
+  .search-trigger {
+    min-width: 106px;
   }
 
-  .home-title-console {
-    margin-top: 0;
-    align-items: center;
-    text-align: center;
+  .appearance-control {
+    flex: 0 0 auto;
   }
 
-  .welcome-panel-body,
-  .status-panel-body {
-    grid-template-columns: 1fr;
+  .appearance-trigger {
+    min-width: 132px;
   }
-}
 
-@media (max-width: 420px) {
   .appearance-panel {
     position: fixed;
     top: 67px;
@@ -1907,65 +1923,228 @@ html[data-theme="dark-aero"] .tile-title {
     border-radius: 0 0 8px 8px;
   }
 
+  .home-page {
+    width: calc(100% - 12px);
+    padding: 12px 0 30px;
+  }
+
+  .home-portal-body {
+    padding: 12px;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .home-logo-placeholder {
+    width: 100%;
+    min-height: 142px;
+    margin-inline: auto;
+  }
+
+  .home-title-console {
+    margin-top: 0;
+    padding: 24px 18px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-hero h1 {
+    font-size: 42px;
+  }
+
+  .home-lead {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .primary-action {
+    width: min(100%, 270px);
+    min-height: 52px;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .portal-workspace {
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .portal-panel {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    background: color-mix(in srgb, var(--page-start), transparent 22%);
+  }
+
+  .portal-section-heading {
+    min-height: 0;
+    padding: 14px 4px 11px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 7px;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .portal-section-heading h2 {
+    font-size: 19px;
+  }
+
+  .compact-label,
+  .status-readout {
+    font-size: 10px;
+  }
+
+  .status-section-heading > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .portal-panel-body {
+    padding: 16px 4px 5px;
+    font-size: 16px;
+  }
+
+  .portal-panel-body h3 {
+    font-size: 19px;
+  }
+
+  .portal-panel-body p {
+    line-height: 1.68;
+  }
+
+  .welcome-panel-body,
+  .status-panel-body {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .welcome-panel-body strong {
+    width: fit-content;
+    padding: 7px 10px;
+    font-size: 14px;
+  }
+
+  .portal-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-facts div {
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    align-items: baseline;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .portal-facts div:last-child {
+    border-bottom: 0;
+  }
+
+  .portal-facts dt {
+    font-size: 10px;
+  }
+
+  .portal-facts dd {
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .system-message,
+  .status-notice {
+    padding: 11px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat-placeholder {
+    min-height: 86px;
+    padding: 12px;
+  }
+
+  .stat-placeholder:nth-child(2) {
+    border-right: 0;
+  }
+
+  .stat-placeholder:nth-child(3) {
+    grid-column: 1 / -1;
+    border-top: 1px solid color-mix(in srgb, var(--aqua-deep), transparent 54%);
+  }
+
+  .stat-placeholder > span {
+    font-size: 13px;
+  }
+
+  .stat-placeholder small {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
   .site-header {
     gap: 0;
   }
 
   .brand {
-    min-width: 58px;
+    min-width: 64px;
     padding-inline: 10px;
     font-size: 16px;
   }
 
+  .header-tabs > .nav-link,
+  .header-tabs > .search-trigger,
+  .header-tabs > .appearance-control {
+    min-width: 0;
+    flex: 0 0 50%;
+  }
+
   .nav-link {
-    padding-inline: 8px;
-    gap: 5px;
-    font-size: 13px;
+    min-width: 0;
+    padding-inline: 16px;
+    gap: 7px;
+    font-size: 14px;
   }
 
   .appearance-trigger {
-    width: 44px;
-    padding: 0;
+    width: 100%;
+    min-width: 0;
+    padding-inline: 16px;
     justify-content: center;
   }
 
   .appearance-trigger span {
-    display: none;
+    display: inline;
   }
 
   .search-trigger {
-    width: 44px;
-    padding: 0;
+    width: 50%;
+    min-width: 0;
+    padding-inline: 16px;
     justify-content: center;
   }
 
   .search-trigger span {
-    display: none;
+    display: inline;
   }
 
   .site-footer span:nth-child(n + 2) {
     display: none;
   }
 
-  .home-hero h1 {
-    font-size: 38px;
-  }
-
-  .home-lead {
-    font-size: 16px;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
   .stat-placeholder {
-    min-height: 64px;
-    border-right: 0;
-    border-bottom: 1px solid color-mix(in srgb, var(--aqua-deep), transparent 54%);
+    border-bottom: 0;
   }
 
-  .stat-placeholder:last-child {
+  .stat-placeholder:nth-child(3) {
     border-bottom: 0;
   }
 
@@ -2003,6 +2182,46 @@ html[data-theme="dark-aero"] .tile-title {
 
   .content-section {
     padding-block: 29px 32px;
+  }
+}
+
+@media (max-width: 340px) {
+  html,
+  body {
+    min-width: 0;
+  }
+
+  .home-portal-body {
+    padding: 9px;
+  }
+
+  .home-title-console {
+    padding-inline: 13px;
+  }
+
+  .home-hero h1 {
+    font-size: 36px;
+  }
+
+  .home-lead {
+    font-size: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-placeholder,
+  .stat-placeholder:nth-child(2),
+  .stat-placeholder:nth-child(3) {
+    grid-column: auto;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--aqua-deep), transparent 54%);
+  }
+
+  .stat-placeholder:last-child {
+    border-bottom: 0;
   }
 }
 
