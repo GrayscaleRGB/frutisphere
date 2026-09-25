@@ -159,6 +159,24 @@ export function AestheticPage() {
             </section>
           )}
 
+          {record.history && (
+            <section className="content-section" aria-labelledby="history-heading">
+              <h2 id="history-heading">History</h2>
+              <p>{record.history}</p>
+            </section>
+          )}
+
+          {record.historicalExamples && record.historicalExamples.length > 0 && (
+            <section className="content-section" aria-labelledby="historical-examples-heading">
+              <h2 id="historical-examples-heading">Historical Examples</h2>
+              <div className="gallery-grid">
+                {record.historicalExamples.map((image) => (
+                  <img key={image.src} src={image.src} alt={image.alt} />
+                ))}
+              </div>
+            </section>
+          )}
+
           {children.length > 0 && (
             <section className="content-section" aria-labelledby="subcategories-heading">
               <h2 id="subcategories-heading">Subcategories</h2>

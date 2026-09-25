@@ -23,8 +23,9 @@ The canonical source is `src/data/taxonomy.json`. A record may contain:
 - placement: `section`, `level`, `kind`
 - graph: `parentIds`, `childIds`, `relatedIds`
 - classification: `status`, `origin`, `era`, `classificationNotes`
-- presentation: `summary`, `overview`, `colors`, `motifs`, `tileImage`,
-  `heroImage`, `galleryImages`, `specialTheme`
+- authored content: `summary`, `overview`, `history`, `colors`, `motifs`
+- presentation: `tileImage`, `heroImage`, `historicalExamples`,
+  `galleryImages`, `specialTheme`
 - maintenance: `sources`, `tags`, `lastReviewed`
 
 `tileImage` always identifies the complete tile artwork. `placeholder: true`

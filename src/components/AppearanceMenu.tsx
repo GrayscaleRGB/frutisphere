@@ -10,6 +10,7 @@ import {
 export function AppearanceMenu() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const {
     theme,
     accent,
@@ -19,6 +20,12 @@ export function AppearanceMenu() {
     setAccent,
     activateSpecialTheme,
   } = useAppearance();
+  const activeSpecialThemeOption = getSpecialTheme(activeSpecialTheme);
+
+  const closeMenu = (restoreFocus = false) => {
+    setOpen(false);
+    if (restoreFocus) window.requestAnimationFrame(() => triggerRef.current?.focus());
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -27,7 +34,7 @@ export function AppearanceMenu() {
       if (!menuRef.current?.contains(event.target as Node)) setOpen(false);
     };
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setOpen(false);
+      if (event.key === 'Escape') closeMenu(true);
     };
 
     document.addEventListener('pointerdown', closeOnOutsideClick);
@@ -46,8 +53,11 @@ export function AppearanceMenu() {
   return (
     <div className="appearance-control" ref={menuRef}>
       <button
+        ref={triggerRef}
         className="appearance-trigger"
         type="button"
+        aria-label="Appearance"
+        aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls="appearance-panel"
         onClick={() => setOpen((current) => !current)}
@@ -61,9 +71,13 @@ export function AppearanceMenu() {
           <div className="appearance-panel-heading">
             <div>
               <strong>Appearance</strong>
-              <span>Theme and accent are independent.</span>
+              <span>
+                {activeSpecialThemeOption
+                  ? `Active special theme: ${activeSpecialThemeOption.name}`
+                  : 'Theme and accent are independent.'}
+              </span>
             </div>
-            <button className="icon-button" type="button" aria-label="Close appearance settings" onClick={() => setOpen(false)}>
+            <button className="icon-button" type="button" aria-label="Close appearance settings" onClick={() => closeMenu(true)}>
               <X size={17} aria-hidden="true" />
             </button>
           </div>

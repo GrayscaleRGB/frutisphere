@@ -7,6 +7,7 @@ import {
   APPEARANCE_STORAGE_KEY,
   AppearanceProvider,
 } from '../appearance/AppearanceContext';
+import { taxonomyById } from '../data/taxonomy';
 import { AestheticPage } from './AestheticPage';
 
 function renderAesthetic(path: string) {
@@ -45,8 +46,32 @@ describe('AestheticPage', () => {
     renderAesthetic('/aesthetic/frutiger-eco');
 
     expect(screen.queryByRole('heading', { name: 'Overview' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'History' })).toBeNull();
+    expect(screen.queryByRole('heading', { name: 'Historical Examples' })).toBeNull();
     expect(screen.queryByRole('heading', { name: 'Gallery' })).toBeNull();
     expect(screen.queryByRole('heading', { name: 'Sources' })).toBeNull();
+  });
+
+  it('renders optional history modules when their data is present', () => {
+    const record = taxonomyById.get('y2k-futurism')!;
+    record.history = 'Fixture history for the reusable page module.';
+    record.historicalExamples = [{
+      src: '/assets/placeholders/more-tile.svg',
+      alt: 'Neutral historical example placeholder',
+      placeholder: true,
+    }];
+
+    try {
+      renderAesthetic('/aesthetic/y2k-futurism');
+
+      expect(screen.getByRole('heading', { name: 'History' })).toBeTruthy();
+      expect(screen.getByText('Fixture history for the reusable page module.')).toBeTruthy();
+      expect(screen.getByRole('heading', { name: 'Historical Examples' })).toBeTruthy();
+      expect(screen.getByAltText('Neutral historical example placeholder')).toBeTruthy();
+    } finally {
+      delete record.history;
+      delete record.historicalExamples;
+    }
   });
 
   it('renders parent navigation for a nested subcategory', () => {

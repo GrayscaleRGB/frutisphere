@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   APPEARANCE_STORAGE_KEY,
   AppearanceProvider,
@@ -19,13 +19,20 @@ function renderMenu() {
 
 describe('AppearanceMenu', () => {
   beforeEach(() => {
+    vi.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => {
+      callback(0);
+      return 1;
+    });
     window.localStorage.clear();
     delete document.documentElement.dataset.theme;
     delete document.documentElement.dataset.accent;
     delete document.documentElement.dataset.specialTheme;
   });
 
-  afterEach(cleanup);
+  afterEach(() => {
+    cleanup();
+    vi.restoreAllMocks();
+  });
 
   it('exposes every Quick Access theme and accent while keeping Recent hidden', () => {
     renderMenu();
@@ -60,5 +67,23 @@ describe('AppearanceMenu', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Appearance' }));
     expect(screen.getByRole('button', { name: 'Dark Aero' }).getAttribute('aria-pressed')).toBe('true');
     expect(screen.getByRole('button', { name: 'Purple' }).getAttribute('aria-pressed')).toBe('true');
+  });
+
+  it('identifies the active special theme and returns focus when dismissed', () => {
+    window.localStorage.setItem(APPEARANCE_STORAGE_KEY, JSON.stringify({
+      theme: 'alba-aero',
+      accent: 'default',
+      activeSpecialTheme: 'eco-bloom',
+      recentSpecialThemes: ['eco-bloom'],
+    }));
+    renderMenu();
+
+    const trigger = screen.getByRole('button', { name: 'Appearance' });
+    fireEvent.click(trigger);
+    expect(screen.getByText('Active special theme: Eco Bloom')).toBeTruthy();
+
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(screen.queryByRole('dialog', { name: 'Appearance settings' })).toBeNull();
+    expect(document.activeElement).toBe(trigger);
   });
 });

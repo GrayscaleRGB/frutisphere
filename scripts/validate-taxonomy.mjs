@@ -18,6 +18,14 @@ const slugs = new Map();
 const identityTerms = new Map();
 
 const normalize = (value) => value.trim().toLocaleLowerCase('en-US');
+const isValidImage = (image) => Boolean(
+  image
+  && typeof image.src === 'string'
+  && image.src.trim()
+  && typeof image.alt === 'string'
+  && image.alt.trim()
+  && typeof image.placeholder === 'boolean',
+);
 const noteDuplicate = (map, value, owner, label) => {
   const key = normalize(value);
   const previous = map.get(key);
@@ -57,8 +65,20 @@ for (const record of records) {
     }
   }
 
-  if (!record.tileImage?.src || !record.tileImage?.alt || typeof record.tileImage?.placeholder !== 'boolean') {
+  if (!isValidImage(record.tileImage)) {
     errors.push(`${record.id} has an invalid tileImage contract.`);
+  }
+  if (record.heroImage !== undefined && !isValidImage(record.heroImage)) {
+    errors.push(`${record.id} has an invalid heroImage contract.`);
+  }
+  for (const field of ['historicalExamples', 'galleryImages']) {
+    if (record[field] !== undefined && !Array.isArray(record[field])) {
+      errors.push(`${record.id}.${field} must be an array when present.`);
+      continue;
+    }
+    for (const image of record[field] ?? []) {
+      if (!isValidImage(image)) errors.push(`${record.id}.${field} contains an invalid image contract.`);
+    }
   }
 }
 

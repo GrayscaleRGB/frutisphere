@@ -31,10 +31,12 @@ export interface TaxonomyRecord {
   era?: string;
   summary?: string;
   overview?: string;
+  history?: string;
   colors?: string[];
   motifs?: string[];
   tileImage: TileImage;
   heroImage?: TileImage;
+  historicalExamples?: TileImage[];
   galleryImages?: TileImage[];
   sources: string[];
   specialTheme?: string;
