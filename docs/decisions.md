@@ -68,6 +68,12 @@ polish should favor tactile Aero and skeuomorphic depth over generic glass/SaaS
 or editorial-minimal styling, with theme tokens and isolated CSS keeping major
 restyling reversible.
 
+Implementation note (2026-09-25): the first visual-polish pass uses shared CSS
+tokens for chrome, bevels, highlights, shadows, and the secondary accent. It
+also replaces the provisional serif display treatment with a system humanist
+sans stack. Navigation, taxonomy, component structure, tile assets, and motion
+logic remain unchanged so the treatment can be revised independently.
+
 ## D-009: Family and navigation hierarchy
 
 Status: Locked product decision.
