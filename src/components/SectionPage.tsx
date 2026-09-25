@@ -1,25 +1,8 @@
 import { ArrowLeft } from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import {
-  getRecords,
-  taxonomyBySlug,
-  type TaxonomyRecord,
-} from '../data/taxonomy';
+import { getRecords, taxonomyBySlug } from '../data/taxonomy';
+import { AestheticTile } from './AestheticTile';
 import { Header } from './Header';
-
-function GridTile({ record }: { record: TaxonomyRecord }) {
-  return (
-    <article className="grid-tile">
-      <img
-        className="grid-tile-image"
-        src={record.tileImage.src}
-        alt={record.tileImage.alt}
-        draggable="false"
-      />
-      <h2>{record.name}</h2>
-    </article>
-  );
-}
 
 export function SectionPage() {
   const { sectionSlug } = useParams();
@@ -47,7 +30,7 @@ export function SectionPage() {
         </header>
         <div className="aesthetic-grid">
           {children.map((record) => (
-            <GridTile key={record.id} record={record} />
+            <AestheticTile key={record.id} record={record} />
           ))}
         </div>
       </main>
