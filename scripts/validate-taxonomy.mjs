@@ -91,6 +91,29 @@ for (const record of records) {
       errors.push(`${record.id} declares parent ${parentId}, but the parent does not declare that child.`);
     }
   }
+  for (const relatedId of record.relatedIds ?? []) {
+    const related = recordsById.get(relatedId);
+    if (related && !related.relatedIds?.includes(record.id)) {
+      errors.push(`${record.id} relates to ${relatedId}, but that relationship is not reciprocal.`);
+    }
+  }
+
+  if (record.level === 2) {
+    const expectedChildKind = record.kind === 'Family'
+      ? 'Subcategory'
+      : record.kind === 'Navigation'
+        ? 'Category'
+        : undefined;
+
+    if (expectedChildKind) {
+      for (const childId of record.childIds ?? []) {
+        const child = recordsById.get(childId);
+        if (child && child.kind !== expectedChildKind) {
+          errors.push(`${record.id} is a ${record.kind} and requires direct children to be ${expectedChildKind}; ${childId} is ${child.kind}.`);
+        }
+      }
+    }
+  }
 }
 
 if (errors.length) {

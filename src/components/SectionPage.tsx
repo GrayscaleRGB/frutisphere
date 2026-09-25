@@ -11,6 +11,7 @@ export function SectionPage() {
   if (!section || section.level !== 2) return <Navigate to="/" replace />;
 
   const children = getRecords(section.childIds).filter((record) => record.level === 3);
+  const childLabel = section.kind === 'Family' ? 'subcategories' : 'categories';
 
   return (
     <div className="app-shell section-shell">
@@ -26,7 +27,7 @@ export function SectionPage() {
           <p className="eyebrow">{section.kind}</p>
           <h1>{section.name}</h1>
           {section.summary && <p>{section.summary}</p>}
-          <span className="result-count">{children.length} categories</span>
+          <span className="result-count">{children.length} {childLabel}</span>
         </header>
         <div className="aesthetic-grid">
           {children.map((record) => (

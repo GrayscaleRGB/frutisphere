@@ -67,3 +67,12 @@ developed. The prototype serif heading is not final typography. Future visual
 polish should favor tactile Aero and skeuomorphic depth over generic glass/SaaS
 or editorial-minimal styling, with theme tokens and isolated CSS keeping major
 restyling reversible.
+
+## D-009: Family and navigation hierarchy
+
+Status: Locked product decision.
+
+Frutiger Aero and Vectordelia are Families whose direct Level 3 children are
+Subcategories. More is a navigation section whose direct Level 3 children are
+Categories. A More Category may contain Subcategories. Do not substitute
+`Variant` or `Subgenre` for these terms.

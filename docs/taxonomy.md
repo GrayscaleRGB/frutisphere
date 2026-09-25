@@ -10,6 +10,11 @@ Preferred vocabulary: Realm, Family, Category, Subcategory, Parent, Children,
 Related, Status, Origin, Era, and Aliases. Use `Subcategory`; do not use
 `Variant`.
 
+Frutiger Aero and Vectordelia are Families, and their direct Level 3 children
+are Subcategories. More is a navigation section rather than a Family, and its
+direct Level 3 children are Categories. Those Categories may contain their own
+Subcategories.
+
 ## Record fields
 
 The canonical source is `src/data/taxonomy.json`. A record may contain:
@@ -50,4 +55,6 @@ and never create duplicate pages.
 Run `pnpm validate:data`. The validator rejects duplicate IDs or slugs, unknown
 references, self-references, invalid controlled values, repeated aliases within
 a record, and aliases that collide with another canonical name, slug, or alias.
-It also checks that declared parent/child links are reciprocal.
+It also checks that declared parent/child and related links are reciprocal.
+Direct children of Families must be Subcategories, while direct children of
+Navigation records must be Categories.

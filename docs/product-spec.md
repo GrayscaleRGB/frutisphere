@@ -14,8 +14,9 @@ accessible.
 
 1. Level 1: the Alba Aero site environment and compact global header.
 2. Level 2: exactly three primary choices: Vectordelia, Frutiger Aero, More.
-3. Level 3: an equal-size grid of categories within the selected section.
-4. Level 4: a reusable, data-driven category or aesthetic page.
+3. Level 3: an equal-size grid of Subcategories for a Family, or Categories for
+   the More navigation section.
+4. Level 4: a reusable, data-driven Category, Subcategory, or aesthetic page.
 
 The explorer is the homepage. It opens with Frutiger Aero emphasized.
 

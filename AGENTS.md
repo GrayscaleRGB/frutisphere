@@ -28,6 +28,8 @@ assets.
 - Hash routing for static hosting compatibility.
 - `src/data/taxonomy.json` is the canonical taxonomy source.
 - Run `pnpm validate:data` after taxonomy edits.
+- Frutiger Aero and Vectordelia are Families with direct Subcategory children.
+  More is a Navigation section with direct Category children.
 - Themes and accents are separate concepts and persist in `localStorage`.
 - Keep routes and pages data-driven; do not create one component per aesthetic.
 
