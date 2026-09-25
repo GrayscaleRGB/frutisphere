@@ -1,12 +1,40 @@
 import { ArrowLeft } from 'lucide-react';
+import { useEffect } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { getRecords, taxonomyBySlug } from '../data/taxonomy';
+import { writeSectionScroll } from '../lib/sectionScroll';
 import { AestheticTile } from './AestheticTile';
 import { Header } from './Header';
+
+function useSectionScrollTracking(sectionSlug: string | undefined) {
+  useEffect(() => {
+    if (!sectionSlug) return;
+
+    let frame: number | undefined;
+    let pendingScrollY = window.scrollY;
+
+    const saveScroll = () => {
+      pendingScrollY = window.scrollY;
+      if (frame !== undefined) return;
+      frame = window.requestAnimationFrame(() => {
+        writeSectionScroll(sectionSlug, pendingScrollY);
+        frame = undefined;
+      });
+    };
+
+    window.addEventListener('scroll', saveScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', saveScroll);
+      if (frame !== undefined) window.cancelAnimationFrame(frame);
+      writeSectionScroll(sectionSlug, pendingScrollY);
+    };
+  }, [sectionSlug]);
+}
 
 export function SectionPage() {
   const { sectionSlug } = useParams();
   const section = sectionSlug ? taxonomyBySlug.get(sectionSlug) : undefined;
+  useSectionScrollTracking(section?.level === 2 ? section.slug : undefined);
 
   if (!section || section.level !== 2) return <Navigate to="/" replace />;
 

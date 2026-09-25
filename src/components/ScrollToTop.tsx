@@ -1,13 +1,43 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useLocation, useNavigationType } from 'react-router-dom';
+import {
+  getSectionSlug,
+  readSectionScroll,
+  shouldRestoreSectionScroll,
+  writeSectionScroll,
+} from '../lib/sectionScroll';
 
 export function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { key, pathname } = useLocation();
+  const navigationType = useNavigationType();
+  const previousPathnameRef = useRef<string | undefined>(undefined);
+  const handledLocationKeyRef = useRef<string | undefined>(undefined);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    document.querySelector<HTMLElement>('.app-shell')?.scrollTo(0, 0);
-  }, [pathname]);
+    const previous = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+    return () => {
+      window.history.scrollRestoration = previous;
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    if (handledLocationKeyRef.current === key) return;
+
+    const sectionSlug = getSectionSlug(pathname);
+    const restore = sectionSlug && shouldRestoreSectionScroll({
+      destinationSection: sectionSlug,
+      previousPathname: previousPathnameRef.current,
+      navigationType,
+    });
+    const scrollY = restore && sectionSlug ? readSectionScroll(sectionSlug) : 0;
+
+    window.scrollTo({ top: scrollY, left: 0, behavior: 'auto' });
+    if (sectionSlug && !restore) writeSectionScroll(sectionSlug, 0);
+
+    previousPathnameRef.current = pathname;
+    handledLocationKeyRef.current = key;
+  }, [key, navigationType, pathname]);
 
   return null;
 }
