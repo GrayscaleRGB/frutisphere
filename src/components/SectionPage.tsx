@@ -47,7 +47,7 @@ export function SectionPage() {
       <div className="aero-ribbon aero-ribbon-two" aria-hidden="true" />
       <Header />
       <main className="section-page">
-        <Link className="back-link" to="/">
+        <Link className="back-link" to="/explore">
           <ArrowLeft size={17} aria-hidden="true" />
           Back to explorer
         </Link>

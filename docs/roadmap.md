@@ -13,6 +13,9 @@
 5. Discovery: add local name/alias search and polish keyboard/touch behavior.
 6. Verification: test taxonomy rules, routes, persistence, responsive layouts,
    production build, and static-host behavior.
+7. Home and chrome: separate Home from `/explore`, add clearly labelled future
+   community metric placeholders, and replace the floating header with a
+   connected full-width tab interface.
 
 ## After v0.1 review
 

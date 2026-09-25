@@ -1,5 +1,6 @@
 import { Header } from './Header';
 import { LevelTwoExplorer } from './LevelTwoExplorer';
+import { SiteFooter } from './SiteFooter';
 
 export function ExplorerPage() {
   return (
@@ -10,11 +11,7 @@ export function ExplorerPage() {
       <main>
         <LevelTwoExplorer />
       </main>
-      <footer className="site-footer">
-        <span>Explorer prototype</span>
-        <span aria-hidden="true">&#183;</span>
-        <span>Archive imagery pending review</span>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

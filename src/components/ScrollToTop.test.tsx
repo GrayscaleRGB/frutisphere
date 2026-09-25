@@ -18,7 +18,7 @@ function TestRoutes() {
     <>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Link to="/section/frutiger-aero">Open Frutiger Aero</Link>} />
+        <Route path="/explore" element={<Link to="/section/frutiger-aero">Open Frutiger Aero</Link>} />
         <Route path="/section/frutiger-aero" element={(
           <>
             <Link to="/aesthetic/frutiger-jolly">Open Frutiger Jolly</Link>
@@ -78,7 +78,7 @@ describe('ScrollToTop section restoration', () => {
 
   it('starts at the top when entering a section fresh from Level 2', () => {
     writeSectionScroll('frutiger-aero', 640);
-    renderAt(['/']);
+    renderAt(['/explore']);
     fireEvent.click(screen.getByRole('link', { name: 'Open Frutiger Aero' }));
 
     expect(currentScrollY).toBe(0);

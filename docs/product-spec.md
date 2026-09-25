@@ -18,7 +18,14 @@ accessible.
    the More navigation section.
 4. Level 4: a reusable, data-driven Category, Subcategory, or aesthetic page.
 
-The explorer is the homepage. It opens with Frutiger Aero emphasized.
+The Home page introduces Frutisphere, links into the atlas, and reserves clearly
+labelled placeholder space for future community metrics. It does not imply that
+accounts, traffic analytics, or live presence systems exist in v0.1. The
+explorer lives at `/explore` and opens with Frutiger Aero emphasized.
+
+Top-level navigation is Home, Explore, Search, and Appearance. It uses a
+full-width connected tab/chrome treatment rather than a floating navigation
+card. Home is `/`; Explore and its deeper routes form the active Explore area.
 
 ## Tile contract
 

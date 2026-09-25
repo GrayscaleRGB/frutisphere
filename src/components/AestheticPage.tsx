@@ -32,7 +32,7 @@ export function AestheticPage() {
         <nav className="breadcrumbs" aria-label="Breadcrumb">
           <ol>
             <li>
-              <Link to="/">Explorer</Link>
+              <Link to="/explore">Explorer</Link>
             </li>
             {section && (
               <li>

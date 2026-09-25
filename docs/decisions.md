@@ -82,3 +82,13 @@ Frutiger Aero and Vectordelia are Families whose direct Level 3 children are
 Subcategories. More is a navigation section whose direct Level 3 children are
 Categories. A More Category may contain Subcategories. Do not substitute
 `Variant` or `Subgenre` for these terms.
+
+## D-010: Home and Explore separation
+
+Status: Accepted for v0.1.
+
+Use `/` for a concise Frutisphere Home page and `/explore` for the existing
+three-path atlas explorer. The full-width top chrome exposes Home, Explore,
+Search, and Appearance as connected controls. Community statistics remain
+explicitly labelled placeholders until real account and analytics systems are
+designed in a later phase.

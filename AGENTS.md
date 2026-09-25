@@ -4,8 +4,9 @@
 
 Frutisphere is an interactive visual atlas of the Frutiger aesthetic ecosystem.
 It is visual exploration first, documentation second, and community features
-later. The explorer is the homepage; do not turn it into a marketing landing
-page or a general aesthetics encyclopedia.
+later. The Home page introduces the atlas and clearly labels future community
+systems; the primary explorer lives at `/explore`. Do not turn either area into
+a generic marketing site or a general aesthetics encyclopedia.
 
 ## Product authority
 
