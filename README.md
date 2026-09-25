@@ -16,6 +16,15 @@ pnpm dev
 Create a production build with `pnpm build`. The app uses hash routing so the
 static output can be hosted on GitHub Pages without server-side route rewrites.
 
+## Deployment
+
+- Canonical repository: [frutisphere/frutisphere.github.io](https://github.com/frutisphere/frutisphere.github.io)
+- Public site: [https://frutisphere.github.io/](https://frutisphere.github.io/)
+
+Pushes to `main` deploy automatically through the GitHub Pages workflow in
+`.github/workflows/deploy-pages.yml`. The production build is hosted at the
+domain root with Vite's base path set to `/`; HashRouter owns client-side routes.
+
 ## Project map
 
 - `AGENTS.md` - working rules for Codex and future contributors
