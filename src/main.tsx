@@ -2,12 +2,15 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import { App } from './app/App';
+import { AppearanceProvider } from './appearance/AppearanceContext';
 import './styles/globals.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <AppearanceProvider>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </AppearanceProvider>
   </StrictMode>,
 );

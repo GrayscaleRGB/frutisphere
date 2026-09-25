@@ -3,15 +3,18 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
+import { AppearanceProvider } from '../appearance/AppearanceContext';
 import { AestheticPage } from './AestheticPage';
 
 function renderAesthetic(path: string) {
   return render(
-    <MemoryRouter initialEntries={[path]}>
-      <Routes>
-        <Route path="/aesthetic/:aestheticSlug" element={<AestheticPage />} />
-      </Routes>
-    </MemoryRouter>,
+    <AppearanceProvider>
+      <MemoryRouter initialEntries={[path]}>
+        <Routes>
+          <Route path="/aesthetic/:aestheticSlug" element={<AestheticPage />} />
+        </Routes>
+      </MemoryRouter>
+    </AppearanceProvider>,
   );
 }
 

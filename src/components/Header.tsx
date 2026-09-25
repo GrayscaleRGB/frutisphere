@@ -1,5 +1,6 @@
 import { Compass } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import { AppearanceMenu } from './AppearanceMenu';
 
 export function Header() {
   return (
@@ -15,6 +16,7 @@ export function Header() {
           Explore
         </NavLink>
       </nav>
+      <AppearanceMenu />
       <span className="version-label">v0.1</span>
     </header>
   );

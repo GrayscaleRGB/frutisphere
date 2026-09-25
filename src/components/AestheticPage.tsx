@@ -1,5 +1,7 @@
-import { ArrowLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Check, ChevronRight, Sparkles } from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
+import { useAppearance } from '../appearance/AppearanceContext';
+import { getSpecialTheme } from '../appearance/appearance';
 import { getRecords, taxonomyById, taxonomyBySlug } from '../data/taxonomy';
 import { AestheticTile } from './AestheticTile';
 import { Header } from './Header';
@@ -7,6 +9,7 @@ import { Header } from './Header';
 export function AestheticPage() {
   const { aestheticSlug } = useParams();
   const record = aestheticSlug ? taxonomyBySlug.get(aestheticSlug) : undefined;
+  const { activeSpecialTheme, activateSpecialTheme } = useAppearance();
 
   if (!record || record.level === 2) return <Navigate to="/" replace />;
 
@@ -18,6 +21,7 @@ export function AestheticPage() {
   const hasAtAGlance = Boolean(
     record.kind || record.status || record.origin || record.era || record.aliases.length,
   );
+  const specialTheme = getSpecialTheme(record.specialTheme);
 
   return (
     <div className="app-shell aesthetic-shell">
@@ -77,6 +81,19 @@ export function AestheticPage() {
               <p className="alias-line">Also known as {record.aliases.join(', ')}</p>
             )}
             {record.summary && <p className="identity-summary">{record.summary}</p>}
+            {specialTheme && (
+              <button
+                className="special-theme-button"
+                type="button"
+                aria-pressed={activeSpecialTheme === specialTheme.id}
+                onClick={() => activateSpecialTheme(specialTheme.id)}
+              >
+                {activeSpecialTheme === specialTheme.id
+                  ? <Check size={17} aria-hidden="true" />
+                  : <Sparkles size={17} aria-hidden="true" />}
+                {activeSpecialTheme === specialTheme.id ? `${specialTheme.name} active` : `Use ${specialTheme.name} theme`}
+              </button>
+            )}
           </div>
         </header>
 
