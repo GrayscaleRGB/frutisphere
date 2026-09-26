@@ -280,20 +280,13 @@ a:focus-visible {
   box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.35);
 }
 
-.brand-mark {
-  position: relative;
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.46) 0 12%, var(--aqua) 48%, color-mix(in srgb, var(--aqua-deep), black 30%) 100%);
-  box-shadow:
-    inset 0 3px 0 rgba(255, 255, 255, 0.64),
-    inset 0 -3px 0 rgba(0, 0, 0, 0.28),
-    0 2px 3px rgba(0, 0, 0, 0.32);
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  display: block;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.38));
 }
 
 .header-tabs {
@@ -781,29 +774,20 @@ main {
   gap: 14px;
 }
 
-.home-logo-placeholder {
+.home-logo {
   width: 100%;
   min-height: 182px;
   margin-top: 0;
   display: grid;
   place-items: center;
-  align-content: center;
-  gap: 8px;
-  color: var(--muted);
-  border: 2px solid color-mix(in srgb, var(--muted), transparent 28%);
-  border-radius: 3px;
-  background:
-    linear-gradient(45deg, color-mix(in srgb, var(--muted), transparent 94%) 25%, transparent 25% 75%, color-mix(in srgb, var(--muted), transparent 94%) 75%),
-    linear-gradient(45deg, color-mix(in srgb, var(--muted), transparent 94%) 25%, transparent 25% 75%, color-mix(in srgb, var(--muted), transparent 94%) 75%);
-  background-position: 0 0, 8px 8px;
-  background-size: 16px 16px;
-  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.46), inset 0 2px 8px var(--bevel-shadow);
 }
 
-.home-logo-placeholder span {
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
+.home-logo-image {
+  display: block;
+  width: min(100%, 210px);
+  max-height: 210px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 10px color-mix(in srgb, var(--bevel-shadow), transparent 36%));
 }
 
 .home-title-console {
@@ -1703,7 +1687,7 @@ html[data-theme="dark-aero"] .tile-title {
     gap: 12px;
   }
 
-  .home-logo-placeholder,
+  .home-logo,
   .home-title-console {
     margin-top: 0;
   }
@@ -1870,6 +1854,11 @@ html[data-theme="dark-aero"] .tile-title {
     display: none;
   }
 
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+  }
+
   .header-tabs {
     min-width: 0;
     margin-left: 0;
@@ -1937,10 +1926,15 @@ html[data-theme="dark-aero"] .tile-title {
     gap: 18px;
   }
 
-  .home-logo-placeholder {
+  .home-logo {
     width: 100%;
     min-height: 142px;
     margin-inline: auto;
+  }
+
+  .home-logo-image {
+    width: min(100%, 190px);
+    max-height: 190px;
   }
 
   .home-title-console {

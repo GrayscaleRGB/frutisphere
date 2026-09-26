@@ -1,5 +1,5 @@
-import { ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getAssetUrl } from '../lib/assets';
 import { Header } from './Header';
 import { SiteFooter } from './SiteFooter';
 
@@ -24,9 +24,12 @@ export function HomePage() {
           </header>
           <div className="home-portal-body">
             <section className="home-hero">
-              <div className="home-logo-placeholder" aria-label="Temporary Frutisphere logo placeholder">
-                <ImageIcon size={38} strokeWidth={1.8} aria-hidden="true" />
-                <span>Logo placeholder</span>
+              <div className="home-logo">
+                <img
+                  className="home-logo-image"
+                  src={getAssetUrl('/assets/branding/frutisphere-logo.png')}
+                  alt="Frutisphere"
+                />
               </div>
               <div className="home-title-console">
                 <span className="console-label">Frutisphere portal</span>

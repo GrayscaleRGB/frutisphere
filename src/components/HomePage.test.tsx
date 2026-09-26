@@ -29,7 +29,9 @@ describe('HomePage', () => {
     renderHome();
 
     expect(screen.getByRole('heading', { level: 1, name: 'Frutisphere' })).toBeTruthy();
-    expect(screen.getByText('Logo placeholder')).toBeTruthy();
+    expect(screen.getByRole('img', { name: 'Frutisphere' }).getAttribute('src')).toContain(
+      '/assets/branding/frutisphere-logo.png',
+    );
     expect(screen.getByRole('heading', { name: 'Visual and documentation atlas' })).toBeTruthy();
     expect(screen.getByRole('heading', { name: 'Future community space' })).toBeTruthy();
     expect(screen.getByText('No live account, traffic, or presence data is connected in v0.1.')).toBeTruthy();

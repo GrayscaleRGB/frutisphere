@@ -15,6 +15,11 @@ const preferredOrder = ['vectordelia', 'frutiger-aero', 'more'];
 const sections = getLevelTwoRecords().sort(
   (a, b) => preferredOrder.indexOf(a.id) - preferredOrder.indexOf(b.id),
 );
+const levelTwoArtwork: Record<string, string> = {
+  'frutiger-aero': '/assets/level-2/frutiger-aero.png',
+  vectordelia: '/assets/level-2/vectordelia.png',
+  more: '/assets/level-2/more.png',
+};
 
 interface LevelTwoTileProps {
   record: TaxonomyRecord;
@@ -34,8 +39,8 @@ function LevelTwoTile({ record, selected, onFocus, setTileRef }: LevelTwoTilePro
     >
       <img
         className="tile-image"
-        src={getAssetUrl(record.tileImage.src)}
-        alt={record.tileImage.alt}
+        src={getAssetUrl(levelTwoArtwork[record.id] ?? record.tileImage.src)}
+        alt={`${record.name} tile artwork`}
         draggable="false"
       />
       <span className="tile-title">{record.name}</span>

@@ -1,5 +1,6 @@
-import { Compass, Home, ImageIcon } from 'lucide-react';
+import { Compass, Home } from 'lucide-react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { getAssetUrl } from '../lib/assets';
 import { AppearanceMenu } from './AppearanceMenu';
 import { SearchDialog } from './SearchDialog';
 
@@ -12,9 +13,12 @@ export function Header() {
   return (
     <header className="site-header">
       <Link className="brand" to="/" aria-label="Frutisphere home">
-        <span className="brand-mark" aria-hidden="true">
-          <ImageIcon size={18} strokeWidth={2.2} />
-        </span>
+        <img
+          className="brand-logo"
+          src={getAssetUrl('/assets/branding/frutisphere-logo.png')}
+          alt=""
+          aria-hidden="true"
+        />
         <span className="brand-name">Frutisphere</span>
       </Link>
       <nav className="header-tabs" aria-label="Primary navigation">

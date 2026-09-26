@@ -22,6 +22,9 @@ describe('Header', () => {
 
   it('marks Home as current only on the Home page', () => {
     renderHeader('/');
+    expect(screen.getByRole('link', { name: 'Frutisphere home' }).querySelector('img')?.getAttribute('src')).toContain(
+      '/assets/branding/frutisphere-logo.png',
+    );
     expect(screen.getByRole('link', { name: /^Home$/i }).getAttribute('aria-current')).toBe('page');
     expect(screen.getByRole('link', { name: /^Explore$/i }).getAttribute('aria-current')).toBeNull();
   });
